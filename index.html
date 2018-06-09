@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta name="viewport" content="initial-scale=1.0">
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+      <title>Bombs Away</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBe-qYGZoJptR5xKEkJpid9mb1ilx3UCE&callback=initMap"
+      async defer></script>
+
+    <style>
+      body {
+        background-image: url("assets/media/drone.jpg");
+        background-size: 100%;
+      }
+
+      #map {
+        height: 400px;
+        width: 80%;
+        margin: auto;    
+        opacity: .7;  
+      }
+
+      #center-map {
+        margin: 4%;
+        text-align: center;
+        margin-top: 5px;
+      }
+
+      #add-data {
+        margin-bottom: 5px;
+        float: right;
+      }
+
+      .jumbotron {
+        padding-bottom: 5px;
+        padding-top: 5px;
+        opacity: .5;
+      }
+
+    </style>
+  </head>
+
+  <body>
+      <div class="jumbotron jumbotron-fluid">
+          <div class="container"></div>
+              <h1 class="display-4 text-center">Bombs Away!</h1>
+              <p class="lead text-center">Enter a date or range of dates to show where the US used drone strikes</p>
+          </div>
+      </div>
+    <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <form id = "data form">
+              <div class="form-group">
+                <label for="startDate">Start Date (YYYYMMDD)</label>
+                <input type="date" class="form-control" id="startDate" placeholder="Input Your Query Start Date Here">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-6">
+            <form id = "data form">
+              <div class="form-group">
+                <label for="endDate">End Date (YYYYMMDD)</label>
+                <input type="date" class="form-control" id="endDate" placeholder="Input Your Query End Date Here">
+              </div>
+            </form>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-md-6">
+              <input class="btn btn-primary" id="add-data" type="submit" value="Submit">
+            </div>
+            <div class="col-md-6">
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+                More Info
+              </button>
+            </div>
+          </div>
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-title">Strike Details:</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body" id="modal-info output">
+                      
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" id="center-map">
+              <div id="map">
+                map goes Here
+              </div>
+          </div>
+    </div>
+      <script src="main.js"></script>
+    </body>
+</html>
