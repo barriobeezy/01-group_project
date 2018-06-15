@@ -84,6 +84,7 @@ var queryURL =  "api.dronestre.am/data "
     });
 
     $("#add-data").on("click", function(event) {
+        
         lonArray = [];
         latArray = [];
         event.preventDefault();
@@ -177,6 +178,7 @@ var queryURL =  "api.dronestre.am/data "
                 var test = x[z]/10;
 //test is checking if the value of the latitude divided by ten is zero. If so it triggers this if statement to replace the empty data with new data
                 if (test==0) {
+
                     locationInput = country[z].toString()
 
                         geoToo(locationInputToo, true, function(lat){
