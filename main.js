@@ -77,13 +77,14 @@ var queryURL =  "api.dronestre.am/data "
     var link = [];
     var lonArray = [];
     var latArray = [];
-
                             
     $("#close").on('click', function(){
         $("#modal-info").empty();
     });
 
     $("#add-data").on("click", function(event) {
+
+        $("#loading").prepend("<img id='loader' src='assets/media/loader-bar.gif' />");
         
         lonArray = [];
         latArray = [];
@@ -219,6 +220,8 @@ var queryURL =  "api.dronestre.am/data "
                     position: new google.maps.LatLng( latArray[i], lonArray[i]),
                     map: map
                 });
+
+                $("#loading").text("");
 
                 //extends the bounds of the map if a new marker displays
                 loc = new google.maps.LatLng(marker.position.lat(), marker.position.lng()); bounds.extend(loc);

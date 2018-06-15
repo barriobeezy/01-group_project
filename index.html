@@ -50,17 +50,19 @@
 
 <body>
         <div class="jumbotron jumbotron-fluid">
-                <div class="container"></div>
-                    <h1 class="display-4 text-center">Drone Strike Database</h1>
-                    <p class="lead text-center">Displays Info From All Recorded US Drone Strikes</p>
-                </div>
+            <div class="container"></div>
+                <h1 class="display-4 text-center">Drone Strike Database</h1>
+                <p class="lead text-center">Displays Info From All Recorded US Drone Strikes</p>
             </div>
+        </div>
+
         <div class="container">
+            <!--User Date Input-->
                 <div class="row">
                 <div class="col-md-6">
                     <form id = "data form">
                     <div class="form-group">
-                        <label for="startDate" class="date">Start Date (YYYYMMDD)</label>
+                        <label for="startDate" class="date text">Start Date (MMDDYYY)</label>
                         <input type="date" class="form-control" id="startDate" placeholder="Input Your Query Start Date Here">
                     </div>
                     </form>
@@ -68,22 +70,31 @@
                 <div class="col-md-6">
                     <form id = "data form">
                     <div class="form-group">
-                        <label for="endDate" class="date">End Date (YYYYMMDD)</label>
+                        <label for="endDate" class="date text">End Date (MMDDYYY)</label>
                         <input type="date" class="form-control" id="endDate" placeholder="Input Your Query End Date Here">
                     </div>
                     </form>
                 </div>
             </div>
+            <!--Buttons-->
             <div class="row">
-            <div class="col-md-6">
-                <input class="btn btn-secondary" id="add-data" type="submit" value="Submit">
+                <div class="col-md-6">
+                    <input class="btn btn-secondary" id="add-data" type="submit" value="Submit">
                 </div>
-            <div class="col-md-6">
-                <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
-                    More Info
-                </button>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+                        More Info
+                    </button>
+                </div>
+                <div class="col-md-5">
+                    <p class="text">Click a map marker then the "More Info" button for more info</p>
                 </div>
             </div>
+            <!-- loading text goes here -->
+            <div style="text-align: center;">
+                <h4 class="lead" id="loading"></h4>
+            </div>
+            <!--Modal text box-->
             <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -105,11 +116,11 @@
                 </div>
             </div>
         </div>
+        <!--Map-->
         <div class="row">
         </div>
         <div class="row" id="center-map">
-            <div id="map">
-                
+            <div id="map">   
             </div>
         </div>
 </div>
