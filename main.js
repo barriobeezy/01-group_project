@@ -154,9 +154,8 @@ var queryURL =  "api.dronestre.am/data "
 
                     places.splice(z, 1,country[z])
                     locationInput = country[z].toString()
-                    locationInputToo = locationInput.replace(" ", "+");
             
-                        geo(locationInputToo, true, function(lon){
+                        geo(locationInput, true, function(lon){
     
                             x[z] = lon.toString()
                             console.log("longitudinal array "+x)
@@ -181,7 +180,7 @@ var queryURL =  "api.dronestre.am/data "
 
                     locationInput = country[z].toString()
 
-                        geoToo(locationInputToo, true, function(lat){
+                        geoToo(locationInput, true, function(lat){
 
                             x[z] = lat.toString() 
                             console.log("Latitudinal array "+x)
